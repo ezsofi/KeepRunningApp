@@ -1,7 +1,9 @@
+using KeepRunning.Configurations;
 using KeepRunning.Database;
+using KeepRunning.Services;
+using KeepRunning.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +23,9 @@ namespace KeepRunning
         {
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDbContext>(builder => builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddSwaggerConfig();
+            services.AddScoped<IRunnerService, RunnerService>();
+            services.AddScoped<ITrainingPlanService, TrainingPlanService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -30,8 +35,13 @@ namespace KeepRunning
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCustomSwaggerConfig();
+
             app.UseRouting();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
+            
 
             app.UseEndpoints(endpoints =>
             {

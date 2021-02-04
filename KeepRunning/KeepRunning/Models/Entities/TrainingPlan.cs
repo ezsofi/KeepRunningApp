@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KeepRunning.Models.Entities
 {
@@ -15,5 +13,13 @@ namespace KeepRunning.Models.Entities
         public Runner Runner{ get; set; }
 
         public List<Training> Trainings { get; set; }
+        public TrainingPlan()
+        {
+
+        }
+        public TrainingPlan(Runner runner, string Name)
+        {
+
+        }
     }
 }

@@ -15,6 +15,15 @@ namespace KeepRunning.Models.Entities
         public string TrainingType { get; set; }
         public TrainingPlan TrainingPlan { get; set; }
         public string Description { get; set; }
-        public int TotalTimeMinutes { get; set; }
+
+        protected Training()
+        {
+
+        }
+        public Training(TrainingPlan trainingPlan)
+        {
+            TrainingPlan = trainingPlan;
+            DayOfWeekPlanned = DatePlanned.ToString("dddd");
+        }
     }
 }
