@@ -1,0 +1,51 @@
+﻿@using KeepRunning.Models.ViewModels
+@model TrainingPlanViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeepRunning App</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#">Keep<span>Running</span></a>
+            <nav>
+                <ul class="primary-nav">
+                    <li><a href="#">Weekly data</a></li>
+                    <li><a href="#">Performance</a></li>
+                    <li><a href="#">New Training Plan</a></li>
+                    <li><a href="#">SignOut</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <section class="new-plan">
+        <div class="container">
+            <div class="new-plan-form">
+                <p class="new-plan-hed">Create a new plan</p>
+                @using (Html.BeginForm("CreatePlan", "Trainingplan", FormMethod.Post))
+                {
+                    <label for="name">Name: </label>
+                    <br />
+                    <input type="text" id="name" name="name" />
+                    <br />
+                    <label for="startdate">Start Date: </label>
+                    <br />
+                    <input type="date" id="startdate" name="startdate" />
+                    <br />
+                    <label for="runner">Runner's email: </label>
+                    <br />
+                    <input type="text" id="runner" name="runner" />
+                    <br />
+                    <input type="submit" value="Create" />
+                }
+            </div>
+        </div>
+    </section>
+</body>
+</html>

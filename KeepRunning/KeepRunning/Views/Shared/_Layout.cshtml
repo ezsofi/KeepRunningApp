@@ -1,13 +1,40 @@
 ﻿<!DOCTYPE html>
- 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeepRunning App</title>
+    <link href="~/css/site.css" rel="stylesheet" />
 </head>
+
 <body>
-    <div>
-        @RenderBody()
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#">Keep<span>Running</span></a>
+            <nav>
+                <ul class="primary-nav">
+                    <li><a href="#">Weekly data</a></li>
+                    <li><a href="#">Performance</a></li>
+                    <li><a href="#">SignOut</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
+
+    <section class="login">
+        <div class="container">
+            <div class="left-col">
+                <h1>Track your training plans</h1>
+                <p class="subhead">Sign in to see how you progress with your selected trainingplan</p>
+                <div class="register-cta">
+                    <p> Don't have an account?</p>
+                    <a href="#">Create One</a>
+                </div>
+            </div>
+            <div class=" right-col">
+
+            </div>
+        </div>
+    </section>
 </body>
 </html>

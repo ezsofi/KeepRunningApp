@@ -4,6 +4,8 @@ using KeepRunning.Models.DTOs.Requests;
 using KeepRunning.Models.Entities;
 using KeepRunning.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace KeepRunning.Services
@@ -25,15 +27,20 @@ namespace KeepRunning.Services
             {
                 message = "Runner was not found";
             }
-            var newPlanCreated = new TrainingPlan(runner, newPlan.PlanName);
+            var newPlanCreated = new TrainingPlan(newPlan.PlanName, newPlan.StartDate, runner);
             await dbContext.TrainingPlans.AddAsync(newPlanCreated);
             var created = await dbContext.SaveChangesAsync();
             if(created == 0)
             {
                 message = "Plan not created! Try again!";
             }
-            message = $"New training plan ({newPlan.PlanName}) successfully created!";
+            message = "Ok";
             return new ResponseMessageDto { Message = message };
+        }
+
+        public async Task<List<TrainingPlan>?> ReadAllAsync()
+        {
+            return await dbContext.TrainingPlans.ToListAsync();
         }
     }
 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KeepRunning.Models.Entities
 {
@@ -15,6 +12,9 @@ namespace KeepRunning.Models.Entities
         public string TrainingType { get; set; }
         public TrainingPlan TrainingPlan { get; set; }
         public string Description { get; set; }
+        public double? Distance { get; set; }
+        public double DurationSeconds { get; set; }
+        public double AveragePace { get; set; }
 
         protected Training()
         {

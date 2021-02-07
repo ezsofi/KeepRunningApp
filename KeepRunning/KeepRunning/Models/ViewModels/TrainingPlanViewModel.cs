@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace KeepRunning.Models.DTOs.Requests
+namespace KeepRunning.Models.ViewModels
 {
-    public class PlanCreateRequestDto
+    public class TrainingPlanViewModel
     {
         public string PlanName { get; set; }
         public DateTime StartDate { get; set; }
         public string Email { get; set; }
-
     }
 }

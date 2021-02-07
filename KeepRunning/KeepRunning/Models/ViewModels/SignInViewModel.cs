@@ -1,9 +1,8 @@
-﻿using KeepRunning.Models.DTOs.Requests;
-
-namespace KeepRunning.Models.ViewModels
+﻿namespace KeepRunning.Models.ViewModels
 {
     public class SignInViewModel
     {
-        public SignInRegisterRequestDto? SignInData { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
     }
 }

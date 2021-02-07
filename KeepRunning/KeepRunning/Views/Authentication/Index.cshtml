@@ -1,0 +1,58 @@
+﻿@using KeepRunning.Models.ViewModels
+@model SignInViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeepRunning App</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#">Keep<span>Running</span></a>
+        </div>
+    </div>
+
+    <section class="login">
+        <div class="container">
+            <div class="left-col">
+                <h1>Track your training plans</h1>
+                <p class="subhead">Sign in to see how you progress with your selected trainingplan</p>
+                <div class="register-cta">
+                    <p> Don't have an account?</p>
+                    <a href="#">Create One</a>
+                </div>
+            </div>
+            <div class=" right-col">
+                <section class="login-panel">
+                    <div class="container">
+                        <div class="login-form">
+                            <p class="login-head">SignIn</p>
+                            @using (Html.BeginForm("SignIn", "Authentication", FormMethod.Post))
+                            {
+                                <label for="email">Email: </label>
+                                <br />
+                                <input type="email" id="email" name="email" />
+                                <br />
+                                <label for="password">Password: </label>
+                                <br />
+                                <input type="password" id="password" name="password" />
+                                <br />
+                                <input type="submit" value="SignIn" />
+                            }
+                        </div>
+                        <div class="go-to-register">
+                            <p>Don't have an account? <a href="register">Create One</a></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

@@ -41,7 +41,6 @@ namespace KeepRunning
             app.UseStaticFiles();
 
             app.UseAuthentication();
-            
 
             app.UseEndpoints(endpoints =>
             {
